@@ -9,9 +9,11 @@ class Photo(models.Model):
     viewers = models.ManyToManyField(
         'PhotoUser', related_name='can_view', blank=True
     )
+    likes = models.IntegerField()
 
     def __str__(self):
         return self.title
+
 
 class PhotoUser(models.Model):
     name = models.CharField(max_length=200)
